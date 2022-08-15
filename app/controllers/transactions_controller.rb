@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
         @transaction = @account.transactions.new(transaction_params)
         if @account.update_balance(@transaction) != "Balance too low!"
             @transaction.save
-            render json: @transaction
+            render json: @account
         else
             render json: {error: "Transaction not created!"}
         end
