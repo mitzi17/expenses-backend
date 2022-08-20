@@ -19,6 +19,13 @@ class AccountsController < ApplicationController
         @account = Account.find(params[:id])
         render json: @account
     end
+
+    def update
+        @account = Account.find(params[:id])
+        @account.update(name: params["account"]["name"])
+        @account.save
+        render json: @account
+    end
     
     def destroy
         @account = Account.find(params[:id])
