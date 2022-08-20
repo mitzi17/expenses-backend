@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
             @transaction.save
             render json: @account
         else
-            render json: {error: "Transaction not created!"}
+            render json: {error: "Balance too low!"}
         end
     end
 
